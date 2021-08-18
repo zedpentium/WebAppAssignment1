@@ -50,7 +50,11 @@ namespace WebAppAssignment1
 
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                name: "fevercheck",
+                pattern: "FeverCheck/{id?}",
+                defaults: new { controller = "Doctor", action = "FeverCheck" });
+
                 endpoints.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Info}/{action=Home}/{id?}");

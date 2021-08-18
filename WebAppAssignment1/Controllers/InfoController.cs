@@ -8,29 +8,28 @@ namespace WebAppAssignment1.Controllers
 {
     public class InfoController : Controller
     {
-        //private readonly IAboutRepo _aboutRepo;
 
         public IActionResult Home()
         {
-            ViewBag.Message = "Home of Eric R Info Page";
+            ViewBag.Title = "Home of Eric R Info Page";
             return View();
         }
         
         public IActionResult About()
         {
-            ViewBag.Message = "About Eric R";
+            ViewBag.Title = "About Eric R";
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewBag.Message = "Eric R Contact info";
+            ViewBag.Title = "Eric R Contact info";
             return View();
         }
 
         public IActionResult Projects()
         {
-            ViewBag.Message = "Eric R Projects";
+            ViewBag.Title = "Eric R Projects";
             return View();
         }
     }
