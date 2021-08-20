@@ -9,7 +9,7 @@
 <body>
     <div class="divwrapper">  <!-- start divwrapper-->
 
-        <div class="item-a">
+        <header class="item-a">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom" id="navmenubox">
                 <a class="navbar-brand text-info" id="menulogo" asp-controller="Info" asp-action="Home">
                     <img alt="logo" src="@Url.Content("~/pictures/jrhlogobig.jpg")">
@@ -37,7 +37,7 @@
                     </ul>
                 </div>
             </nav>
-        </div>
+        </header>
         <div class="item-e">
             @RenderBody()
         </div>
