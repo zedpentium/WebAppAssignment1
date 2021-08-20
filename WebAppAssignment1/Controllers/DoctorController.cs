@@ -23,18 +23,13 @@ namespace WebAppAssignment1.Controllers
 
             if (ModelState.IsValid)
             {
-                ViewBag.resultMessage = Doctor.CheckTheTemp(createCheck);
+                ViewBag.resultMessage = Doctor.CheckFuncTheTemp(createCheck);
                 return View();
             }
 
             return View(createCheck);
         }
 
-        public IActionResult HotOrColdLimits()
-        {
-            // ViewBag.Title = "Check Temperature";
-            return View();
-        }
     }
 
 }

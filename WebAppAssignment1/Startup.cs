@@ -24,6 +24,17 @@ namespace WebAppAssignment1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDistributedMemoryCache();  // To use session state /ER
+
+            services.AddSession(options =>  // To use session state /ER
+            {
+                options.Cookie.Name = ".EricRwebapp1.Session";
+                options.IdleTimeout = TimeSpan.FromSeconds(300);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             //services.AddRazorPages();
         }
 
@@ -48,8 +59,15 @@ namespace WebAppAssignment1
 
             app.UseAuthorization();
 
+            app.UseSession(); // To use session state /ER
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                name: "Guessgame",
+                pattern: "GuessingGame/{id?}",
+                defaults: new { controller = "Game", action = "GuessingGame" });
+
                 endpoints.MapControllerRoute(
                 name: "fevercheck",
                 pattern: "FeverCheck/{id?}",

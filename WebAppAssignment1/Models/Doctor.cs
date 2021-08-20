@@ -9,10 +9,9 @@ namespace WebAppAssignment1.Models
     {
         public int TempInput { get; set; }
         public string TempType { get; set; }
-        //public bool TempTypeF { get; set; }
 
 
-        public static string CheckTheTemp(Doctor userFormInput)
+        public static string CheckFuncTheTemp(Doctor userFormInput)
         {
             string textMsg = "";
             int celciusFever = 37;
@@ -23,18 +22,14 @@ namespace WebAppAssignment1.Models
             int compareTempTypeFever = 0;
             int compareTempTypeHypo = 0;
 
-            //string tempType = "";
-
-            //int userInputNr = userTempInput.TempInput;
-
             if (userFormInput.TempType == "C") {
                 compareTempTypeFever = celciusFever;
                 compareTempTypeHypo = celciusHypoterm;
-                //tempType = "C";
+
             } else if (userFormInput.TempType == "F") {
                 compareTempTypeFever = fahrenheitFever;
                 compareTempTypeHypo = fahrenheitHypoterm;
-                //tempType = "F";
+
             }
 
 
